@@ -1,4 +1,4 @@
-export interface booksResponseModel {
+export interface bookModel {
     volumeInfo: VolumeInfoModel;
     searchInfo: SearchInfoModel;
 }
