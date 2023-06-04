@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AppComponent } from './app.component';
 import { BooksModule } from './books/books.module';
@@ -11,7 +13,9 @@ import { BooksModule } from './books/books.module';
   ],
   imports: [
     BrowserModule,
+    NoopAnimationsModule,
     HttpClientModule,
+
     BooksModule
   ],
   providers: [],

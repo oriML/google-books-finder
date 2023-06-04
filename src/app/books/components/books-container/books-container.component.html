@@ -1,1 +1,32 @@
-<p>books-container works!</p>
+<div class="container">
+    <books-search-form [searchQuery]="searchQuery">
+    </books-search-form>
+
+    <div class="book-card-wrapper" *ngIf="(books$ | async) as books; else loading">
+        <mat-card *ngFor="let book of books | slice: (currentPage - 1) * 10 : currentPage * 10" class="book-card">
+            <mat-card-header>
+                <mat-card-title>{{ book.title }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p>{{ book.description }}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <img mat-card-sm-image [src]="book.image" alt="Book cover">
+            </mat-card-actions>
+        </mat-card>
+    </div>
+
+    <ng-template #loading>
+        <mat-spinner color="primary"></mat-spinner>
+    </ng-template>
+
+    <div class="pagination">
+        <button mat-mini-fab color="primary" (click)="previousPage()" [disabled]="currentPage === 1">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <span class="current-page">{{ currentPage }}</span>
+        <button mat-mini-fab color="primary" (click)="nextPage()" [disabled]="currentPage === totalPages">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+    </div>
+</div>

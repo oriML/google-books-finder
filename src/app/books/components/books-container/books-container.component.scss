@@ -1,0 +1,32 @@
+.container {
+    padding: 16px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.book-card-wrapper {
+    display: flex;
+    // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.current-page {
+    margin: 0 8px;
+}
