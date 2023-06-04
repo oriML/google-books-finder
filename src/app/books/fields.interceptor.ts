@@ -8,7 +8,7 @@ import {
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class FieldsInterceptorInterceptor implements HttpInterceptor {
+export class FieldsInterceptor implements HttpInterceptor {
 
   private readonly FIELDS_URL = "&fields=items(id, volumeInfo, searchInfo)";
 

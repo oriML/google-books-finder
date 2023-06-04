@@ -5,7 +5,7 @@ import { BooksContainerComponent } from './components/books-container/books-cont
 import { BooksListComponent } from './components/books-list/books-list.component';
 import { BooksRowComponent } from './components/books-row/books-row.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FieldsInterceptorInterceptor } from './fields-interceptor.interceptor';
+import { FieldsInterceptor } from './fields.interceptor';
 
 
 
@@ -21,7 +21,7 @@ import { FieldsInterceptorInterceptor } from './fields-interceptor.interceptor';
   ],
   providers: [
     {
-      provide: HTTP_INTERCEPTORS, useClass: FieldsInterceptorInterceptor, multi: true
+      provide: HTTP_INTERCEPTORS, useClass: FieldsInterceptor, multi: true
     }
   ]
 })
