@@ -1,6 +1,18 @@
 export interface bookModel {
+    id: string;
     volumeInfo: VolumeInfoModel;
     searchInfo: SearchInfoModel;
+}
+export interface viewBookModel {
+    id: string,
+    title: string,
+    description: string,
+    image: string
+}
+
+export interface bookResponseModel {
+    totalItems: number;
+    items: viewBookModel[];
 }
 
 export interface SearchInfoModel {

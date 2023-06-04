@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { EntityState, EntityStore, StoreConfig } from '@datorama/akita';
-import { bookModel } from '../models/books';
+import { viewBookModel } from '../models/books';
 
-export interface BookState extends EntityState<bookModel> {
-    favorites: bookModel[];
+export interface BookState extends EntityState<viewBookModel> {
+    favorites: viewBookModel[];
 }
 
 @Injectable({ providedIn: 'root' })
 @StoreConfig({ name: 'books' })
-export class BookStore extends EntityStore<BookState, bookModel> {
+export class BookStore extends EntityStore<BookState, viewBookModel> {
     constructor() {
         super();
     }
