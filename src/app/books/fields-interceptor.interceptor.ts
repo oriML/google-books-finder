@@ -5,8 +5,7 @@ import {
   HttpEvent,
   HttpInterceptor
 } from '@angular/common/http';
-import { Observable, scan } from 'rxjs';
-import { bookModel } from './models/books';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class FieldsInterceptorInterceptor implements HttpInterceptor {
