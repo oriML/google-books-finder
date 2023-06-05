@@ -63,4 +63,8 @@ export class BooksContainerComponent implements OnInit {
     return Math.ceil(this.totalItems / this.booksPerPage);
   }
 
+  addToFavorites(book: viewBookModel): void {
+    this.booksService.addToFavorites(book);
+  }
+
 }

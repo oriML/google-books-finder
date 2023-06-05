@@ -11,13 +11,18 @@
 .book-card-wrapper {
     display: flex;
     // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 16px;
+    flex-wrap: wrap;
 }
 
 .book-card {
     display: flex;
     flex-direction: column;
     height: 100%;
+    flex: 0 0 20%;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .pagination {

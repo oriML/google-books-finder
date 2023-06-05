@@ -44,4 +44,17 @@ export class BooksService {
       );
   }
 
+  addToFavorites(book: viewBookModel) {
+    if (book) {
+      const ui = this.bookQuery.ui;
+      const favorites = this.bookQuery.getValue().favorites;
+      if (favorites.findIndex(f => f.id === book.id) === -1) {
+        this.booksStore.ui.set({
+          ...ui,
+          favorites: [...favorites, book]
+        })
+      }
+    }
+  }
+
 }
