@@ -15,6 +15,7 @@ export class BooksContainerComponent implements OnInit {
 
 
   books$: Observable<viewBookModel[]>;
+  favorites$: Observable<viewBookModel[]>;
   isBooksLoading$: Observable<boolean>;
 
   searchQuery: UntypedFormControl = new UntypedFormControl('', Validators.required);
@@ -29,11 +30,15 @@ export class BooksContainerComponent implements OnInit {
 
     this.books$ = this.bookQuery.selectAll();
     this.isBooksLoading$ = this.bookQuery.select(state => (state.loading)!);
+    this.favorites$ = this.bookQuery.selectFavorites$;
   }
 
   ngOnInit(): void {
     this.searchQuery.valueChanges
-      .pipe(debounceTime(500), distinctUntilChanged())
+      .pipe(
+        debounceTime(500),
+        distinctUntilChanged()
+      )
       .subscribe(x => this.searchBooks())
   }
 

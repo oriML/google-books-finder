@@ -12,6 +12,10 @@
     display: flex;
     // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     flex-wrap: wrap;
+
+    .mat-fav-icon {
+        color: red;
+    }
 }
 
 .book-card {

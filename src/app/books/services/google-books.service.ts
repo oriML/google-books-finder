@@ -17,7 +17,7 @@ export class GoogleBooksService {
 
     return this.http.get<{ items: bookModel[] }>(url)
       .pipe(
-        map(response => ({
+        map((response) => ({
           totalItems: response.items.length,
           items: response.items.map(item => this.mapToBook(item))
         }))
@@ -29,7 +29,8 @@ export class GoogleBooksService {
       id: item.id,
       title: item.volumeInfo.title,
       description: item.volumeInfo.description,
-      image: item.volumeInfo.imageLinks?.thumbnail || ''
+      image: item.volumeInfo.imageLinks?.thumbnail || '',
+      isFavorite: false
     };
   }
 }
